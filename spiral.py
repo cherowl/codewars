@@ -44,6 +44,7 @@ def get_side_coords_set(
 
 def get_initial_matrix(size: int) -> list[list[int]]:
     """Create matrix by the given sixe and fill with 0"""
+
     return [ [0] * size for _ in range(size) ]
 
 
@@ -52,9 +53,6 @@ def spiralize(size: int) -> list[list[int]]:
 
     # Fill initial matrix with 0
     spiral = get_initial_matrix(size)
-    pprint.pprint(spiral)
-
-    print([s for s in get_side_lengths(size)])
 
     # Start coordinates and direction as a unit verctor
     origin_point = 0, 0
@@ -62,7 +60,6 @@ def spiralize(size: int) -> list[list[int]]:
 
     # Fill the matrix with 1 side by side the spiral
     for side in get_side_lengths(size):
-        print([x for x in get_side_coords_set(origin_point, direction, side)])
 
         # Calculate spiral coordinates based on the given matrix size with step=2
         # and fill the current side of the spiral with 1
